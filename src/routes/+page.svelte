@@ -1,6 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    // @ts-ignore
+    import Navbar from "../lib/navbar.svelte";
+</script>
 
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<Navbar></Navbar>
+Navbar above chooses the two different languages to compare to
+<br>
+Data table here
+<br>
+About page
