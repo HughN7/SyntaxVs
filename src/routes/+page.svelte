@@ -1,11 +1,8 @@
-<script>
+<script lang="ts">
     // @ts-ignore
-    import Navbar from "../lib/navbar.svelte";
+    import Navbar from "$lib/NavBar.svelte";
+    import MainView from "$lib/MidView.svelte"
 </script>
 
-<Navbar></Navbar>
-Navbar above chooses the two different languages to compare to
-<br>
-Data table here
-<br>
-About page
+<Navbar/>
+<MainView/>
