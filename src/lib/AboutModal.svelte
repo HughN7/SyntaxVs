@@ -1,3 +1,7 @@
+<script lang="ts">
+
+</script>
+
 <!-- The button to open modal -->
 <label for="my-modal-3" class="btn btn-ghost">About</label>
 

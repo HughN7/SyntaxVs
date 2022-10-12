@@ -1,6 +1,6 @@
 <script lang="ts">
-    export let lang1:string = "language 1"; 
-    export let lang2:string = "language 2"; 
+    export let lang1:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
+    export let lang2:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
 </script>
 
 <div class="overflow-x-auto">
@@ -10,8 +10,8 @@
         <tr>
             <th>0</th>
             <th>Type</th>
-            <th>{lang1}</th>
-            <th>{lang2}</th>
+            <th>{lang1.language}</th>
+            <th>{lang2.language}</th>
         </tr>
         </thead>
         <tbody>
@@ -19,29 +19,29 @@
         <tr class="hover">
             <th>1</th>
             <td>Printing</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
+            <td>{lang1.print}</td>
+            <td>{lang2.print}</td>
         </tr>
         <!-- row 2 -->
         <tr class="hover">
             <th>2</th>
             <td>String</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
+            <td>{lang1.string}</td>
+            <td>{lang2.string}</td>
         </tr>
         <!-- row 3 -->
         <tr class="hover">
             <th>3</th>
             <td>Integers</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
+            <td>{lang1.integer}</td>
+            <td>{lang2.integer}</td>
         </tr>
         <!-- row 4 -->
         <tr class="hover">
             <th>4</th>
-            <td>Integers</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
+            <td>Decimals</td>
+            <td>{lang1.decimal}</td>
+            <td>{lang2.decimal}</td>
         </tr>
         </tbody>
     </table>

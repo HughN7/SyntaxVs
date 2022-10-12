@@ -1,14 +1,15 @@
 <script lang="ts">
-    export let text: string = ""; 
+    import {LanguageStore} from "../stores"
+    export let text: {id:number, language:string, print:string, integer:string, string:string, decimal:string}; 
+    export let chosenLanguage: {id:number, language:string, print:string, integer:string, string:string, decimal:string}; 
+
 </script>
-<select class="text-xl font-bold select select-ghost select-sm w-auto max-w-xs">
-    <option disabled selected>{text}</option>
-    <option>Java</option>
-    <option>Go</option>
-    <option>C</option>
-    <option>C#</option>
-    <option>C++</option>
-    <option>Rust</option>
-    <option>JavaScript</option>
-    <option>Python</option>
+<select bind:value={chosenLanguage} class="text-xl font-bold select select-ghost select-sm w-auto max-w-xs">
+    <option disabled selected>{text.language}</option>
+    
+    {#each $LanguageStore as item}
+    <option value={item}>
+        {item.language}
+    </option>
+    {/each}
 </select>

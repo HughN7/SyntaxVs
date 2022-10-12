@@ -1,4 +1,6 @@
 <script lang="ts">
+// @ts-nocheck
+
     import AboutModal from "./AboutModal.svelte"
 </script>
 
