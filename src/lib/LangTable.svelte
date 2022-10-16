@@ -3,7 +3,7 @@
     export let lang2:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
 </script>
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto border-2 border-stone-800">
     <table class="table w-full">
         <!-- head -->
         <thead>
