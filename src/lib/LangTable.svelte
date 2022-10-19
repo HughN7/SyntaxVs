@@ -1,7 +1,14 @@
 <script lang="ts">
+    import {HighlightAuto} from "svelte-highlight"
+    import github from "svelte-highlight/styles/github";
+
     export let lang1:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
     export let lang2:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
 </script>
+
+<svelte:head>
+  {@html github}
+</svelte:head>
 
 <div class="overflow-x-auto border-2 border-stone-800">
     <table class="table w-full">
@@ -19,29 +26,29 @@
         <tr class="hover">
             <th>1</th>
             <td>Printing</td>
-            <td>{lang1.print}</td>
-            <td>{lang2.print}</td>
+            <td><HighlightAuto code={lang1.print}/></td>
+            <td><HighlightAuto code={lang2.print}/></td>
         </tr>
         <!-- row 2 -->
         <tr class="hover">
             <th>2</th>
             <td>String</td>
-            <td>{lang1.string}</td>
-            <td>{lang2.string}</td>
+            <td><HighlightAuto code={lang1.string}/></td>
+            <td><HighlightAuto code={lang2.string}/></td>
         </tr>
         <!-- row 3 -->
         <tr class="hover">
             <th>3</th>
             <td>Integers</td>
-            <td>{lang1.integer}</td>
-            <td>{lang2.integer}</td>
+            <td><HighlightAuto code={lang1.integer}/></td>
+            <td><HighlightAuto code={lang2.integer}/></td>
         </tr>
         <!-- row 4 -->
         <tr class="hover">
             <th>4</th>
             <td>Decimals</td>
-            <td>{lang1.decimal}</td>
-            <td>{lang2.decimal}</td>
+            <td><HighlightAuto code={lang1.decimal}/></td>
+            <td><HighlightAuto code={lang2.decimal}/></td>
         </tr>
         </tbody>
     </table>
