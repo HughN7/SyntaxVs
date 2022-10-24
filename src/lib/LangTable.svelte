@@ -1,13 +1,13 @@
 <script lang="ts">
     import {HighlightAuto} from "svelte-highlight"
-    import github from "svelte-highlight/styles/github";
+    import agate from "svelte-highlight/styles/agate";
 
     export let lang1:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
     export let lang2:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
 </script>
 
 <svelte:head>
-  {@html github}
+  {@html agate}
 </svelte:head>
 
 <div class="overflow-x-auto border-2 border-stone-800">
