@@ -1,9 +1,10 @@
 <script lang="ts">
     import {HighlightAuto} from "svelte-highlight"
+    import type { Language } from "../stores";
     import agate from "svelte-highlight/styles/agate";
 
-    export let lang1:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
-    export let lang2:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
+    export let lang1: Language 
+    export let lang2: Language
 </script>
 
 <svelte:head>

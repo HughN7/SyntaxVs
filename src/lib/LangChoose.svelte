@@ -1,7 +1,9 @@
 <script lang="ts">
     import LangOption from "./LangOption.svelte";
-    export let lang1Option:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
-    export let lang2Option:{id:number, language:string, print:string, integer:string, string:string, decimal:string};
+    import type { Language } from "src/stores";
+    
+    export let lang1Option:Language;
+    export let lang2Option:Language;
 </script>
 
 <div>

@@ -1,12 +1,11 @@
 <script lang="ts">
     import {LanguageStore} from "../stores"
-    //export let text: {id:number, language:string, print:string, integer:string, string:string, decimal:string}; 
-    export let chosenLanguage: {id:number, language:string, print:string, integer:string, string:string, decimal:string}; 
-    let defaultText:string = "language"
+    import type { Language } from "../stores";
+    export let chosenLanguage: Language; 
 
 </script>
-<select bind:value={chosenLanguage} class="text-xl font-bold select select-ghost select-sm w-auto max-w-xs">
-    <option disabled selected>{defaultText}</option>
+<select bind:value={chosenLanguage} class="text-3xl font-bold select select-ghost select-sm w-auto max-w-xs h-fit">
+    <option disabled selected>language</option>
     
     {#each $LanguageStore as item}
     <option value={item}>

@@ -7,5 +7,4 @@
 <main>
     <Navbar/>
     <MainView/>
-    <Footer/>
 </main>
