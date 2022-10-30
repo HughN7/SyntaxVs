@@ -1,8 +1,15 @@
 <script lang="ts">
     // @ts-ignore
-    import Navbar from "$lib/NavBar.svelte";
+    import Navbar from "$lib/NavBar.svelte"
     import MainView from "$lib/MidView.svelte"
-    import Footer from "$lib/Footer.svelte";
+    /*
+    import {onMount} from "svelte"
+    import {themeChange} from "theme-change"
+
+    onMount(() => {
+        themeChange(false)
+    })*/
+
 </script>
 <main>
     <Navbar/>
