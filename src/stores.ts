@@ -38,8 +38,17 @@ const Java:Language = {
     decimal: "double someVariable = 2.5"
 }
 
+const Cpp:Language = {
+    id:3,
+    language: "C++",
+    print: "std::cout << \"hello\";",
+    string: "std::string someVariable = \"hello\";",
+    integer: "int someVariable = 1;",
+    decimal: "double someVariable = 2.5;"
+}
+
 
 
 export const LanguageStore = writable([
-    Python, Java
+    Python, Java, Cpp
 ])
