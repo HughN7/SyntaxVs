@@ -17,10 +17,6 @@
     {@html $ChosenTheme}
 </svelte:head>
 
-<div>
-    <button class="btn" on:click={checkStyle}>Log</button>
-</div>
-
 <div class="overflow-x-auto border-2 border-stone-800">
     <table class="table w-full">
         <!-- head -->
