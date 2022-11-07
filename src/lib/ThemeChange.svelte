@@ -1,13 +1,26 @@
 <script lang="ts">
-    
+    import {ashes, agate} from "svelte-highlight/styles"
+    import { ChosenTheme } from "../stores";
 
-    const themes = ["garden", "dark"]
-    let chosenTheme = ""
+    interface styles {
+        [key:string]:string; 
+    }
+
+    const builtInStyles: styles = {
+        "garden": ashes,
+        "dark": agate
+    }
+
+    const themes:string[] = ["garden", "dark"]
+    let chosenTheme:string = themes[0]
+    $ChosenTheme = builtInStyles[chosenTheme]
 
     const onClickChangeTheme = (event:any) => {
-        chosenTheme = event.target.innerHTML;
+        chosenTheme = event.target.innerHTML
+        $ChosenTheme = builtInStyles[chosenTheme]
         document.getElementsByTagName("html")[0].dataset.theme = chosenTheme;
-    };
+        console.log("Updated chosen theme to: " + $ChosenTheme) 
+        };
 </script>
 
 

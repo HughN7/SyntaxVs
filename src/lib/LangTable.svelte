@@ -1,15 +1,25 @@
 <script lang="ts">
     import {HighlightAuto} from "svelte-highlight"
-    import type { Language } from "../stores";
-    import agate from "svelte-highlight/styles/agate";
+    import { ChosenTheme, type Language } from "../stores";
 
     export let lang1: Language 
     export let lang2: Language
+
+
+    const checkStyle = () => {
+        console.log("Store style is: " + $ChosenTheme)
+    }
+
+
 </script>
 
 <svelte:head>
-  {@html agate}
+    {@html $ChosenTheme}
 </svelte:head>
+
+<div>
+    <button class="btn" on:click={checkStyle}>Log</button>
+</div>
 
 <div class="overflow-x-auto border-2 border-stone-800">
     <table class="table w-full">

@@ -47,8 +47,8 @@ const Cpp:Language = {
     decimal: "double someVariable = 2.5;"
 }
 
-
-
 export const LanguageStore = writable([
     Python, Java, Cpp
 ])
+
+export const ChosenTheme = writable("ashes")
