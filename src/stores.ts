@@ -22,7 +22,7 @@ export {DefaultLanguage}
 
 const Python:Language = {
     id: 1,
-    language: "python",
+    language: "Python",
     print: "print(\"hello\")",
     string: "someVariable = \"hello\"",
     integer: "someVariable = 1",
@@ -31,11 +31,11 @@ const Python:Language = {
 
 const Java:Language = {
     id: 2, 
-    language: "java",
-    print: "System.out.println(\"hello\")",
-    string: "String someVariable = \"hello\"",
-    integer: "int someVariable = 1",
-    decimal: "double someVariable = 2.5"
+    language: "Java",
+    print: "System.out.println(\"hello\");",
+    string: "String someVariable = \"hello\";",
+    integer: "int someVariable = 1;",
+    decimal: "double someVariable = 2.5;"
 }
 
 const Cpp:Language = {
