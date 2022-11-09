@@ -11,5 +11,6 @@
     <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
     <h3 class="text-lg font-bold">So what's the difference between using this vs just having two tabs of w3schools stuff?</h3>
     <p class="py-4">Nothing really, just a bit more convenient. They say convenience sells afterall.</p>
+    <a class="link link-info" href="https://github.com/HughN7/SyntaxVs">Follow me on github</a>
   </div>
 </div>
