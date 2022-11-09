@@ -17,7 +17,7 @@
     {@html $ChosenTheme}
 </svelte:head>
 
-<div class="overflow-x-auto border-2 border-stone-800">
+<div class="overflow-x-auto border-2 border-slate-900">
     <table class="table w-full">
         <!-- head -->
         <thead>
