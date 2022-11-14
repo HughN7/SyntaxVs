@@ -1,6 +1,6 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import { ChosenTheme } from "../stores";
+    import { ChosenTheme } from "../../stores";
 
     interface styles {
         [key:string]:string; 
