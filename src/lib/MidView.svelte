@@ -1,11 +1,17 @@
 <script lang="ts">
     import type { Language } from "src/stores";
-    import {DefaultLanguage} from "../stores"; 
+    import {DefaultLanguage, testPrint} from "../stores"; 
     import LangChoose from "./LangChoose.svelte";
     import LangTable from "./LangTable.svelte";
     let lang1:Language = DefaultLanguage
     let lang2:Language = DefaultLanguage
+
 </script>
+
+
+<!--input type="text" placeholder="Type here" class="input input-ghost w-full max-w-xs" bind:value={$testPrint}/-->
+
+
 
 <div class="hero min-h-screen bg-base-200">
     <div class="text-center">
