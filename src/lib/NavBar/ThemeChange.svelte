@@ -1,6 +1,6 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import { theme } from "../../stores";
+    import { ChosenTheme } from "../../stores";
 
     interface styles {
         [key:string]:string; 
@@ -13,13 +13,13 @@
 
     //const themes:string[] = ["light", "dark"]
     let chosenTheme:string = "light"
-    $theme = builtInStyles[chosenTheme]
+    $ChosenTheme = builtInStyles[chosenTheme]
 
     const onClickChangeTheme = (event:any) => {
         chosenTheme = event.target.innerHTML
-        $theme = builtInStyles[chosenTheme]
+        $ChosenTheme = builtInStyles[chosenTheme]
         document.getElementsByTagName("html")[0].dataset.theme = chosenTheme;
-        console.log("Updated chosen theme to: " + $theme) 
+        console.log("Updated chosen theme to: " + $ChosenTheme) 
     };
 </script>
 <a class="btn btn-ghost" href="#theme">

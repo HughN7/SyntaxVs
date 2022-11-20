@@ -1,20 +1,20 @@
 <script lang="ts">
     import {HighlightAuto} from "svelte-highlight"
-    import { theme, type Language } from "../stores";
+    import { ChosenTheme, type Language } from "../stores";
 
     export let lang1: Language 
     export let lang2: Language
 
 
     const checkStyle = () => {
-        console.log("Store style is: " + $theme)
+        console.log("Store style is: " + $ChosenTheme)
     }
 
 
 </script>
 
 <svelte:head>
-    {@html $theme}
+    {@html $ChosenTheme}
 </svelte:head>
 
 <div class="overflow-x-auto border-2 border-slate-900">

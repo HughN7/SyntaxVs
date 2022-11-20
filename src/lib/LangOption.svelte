@@ -4,7 +4,7 @@
     export let chosenLanguage: Language; 
 
 </script>
-<select bind:value={chosenLanguage} class="md:text-3xl font-bold select select-ghost select-sm w-auto max-w-xs h-fit">
+<select bind:value={chosenLanguage} class="text-3xl font-bold select select-ghost select-sm w-auto max-w-xs h-fit">
     <option disabled selected>language</option>
     
     {#each $LanguageStore as item}

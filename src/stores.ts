@@ -1,13 +1,4 @@
 import { writable } from "svelte/store";
-import { browser } from "$app/environment"
-
-
-const localTheme = localStorage.getItem('theme')
-export const theme = writable( localTheme || "ashes")
-//export const theme = writable("ashes")
-theme.subscribe((value) => {localStorage.setItem('theme', value)})
-
-//theme.subscribe((val) => {localStorage.setItem('theme', val)})
 
 export type Language = {
     id:number
@@ -59,3 +50,5 @@ const Cpp:Language = {
 export const LanguageStore = writable([
     Python, Java, Cpp
 ])
+
+export const ChosenTheme = writable("ashes")
