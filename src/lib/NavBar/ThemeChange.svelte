@@ -1,11 +1,11 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import { siteTheme as siteThemeStore,codeTheme as codeThemeStore } from "../../stores";
+    import { siteTheme,codeTheme } from "../../stores";
     import {onMount} from "svelte"; 
 
+    $codeTheme = $siteTheme.toString() == "light" ? agate : ashes  
     onMount(()=>{
-        document.getElementsByTagName("html")[0].dataset.theme = $siteThemeStore.toString()
-        $codeThemeStore = $siteThemeStore.toString() == "light" ? agate : ashes  
+        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
     })
 
     const changeTheme = (event:any) => {
@@ -17,12 +17,12 @@
         document.getElementsByTagName("html")[0].dataset.theme = themeOption
 
         //updateStore for site Theme
-        $siteThemeStore = themeOption
-        console.log("Updated site theme to: " + $siteThemeStore, $siteThemeStore.toString())
+        $siteTheme = themeOption
+        console.log("Updated site theme to: " + $siteTheme, $siteTheme.toString())
 
         //updateStore for code Theme
-        $codeThemeStore  = themeOption == "light" ? agate : ashes
-        console.log("Updated code theme to: " + $codeThemeStore) 
+        $codeTheme = themeOption == "light" ? agate : ashes
+        console.log("Updated code theme to: " + $codeTheme) 
 
     }
 
