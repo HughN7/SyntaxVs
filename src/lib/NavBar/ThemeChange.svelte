@@ -1,26 +1,30 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import { codeTheme } from "../../stores";
+    import { siteTheme as siteThemeStore,codeTheme as codeThemeStore } from "../../stores";
+    import {onMount} from "svelte"; 
 
-    interface styles {
-        [key:string]:string; 
+    onMount(()=>{
+        document.getElementsByTagName("html")[0].dataset.theme = $siteThemeStore.toString()
+        $codeThemeStore = $siteThemeStore.toString() == "light" ? agate : ashes  
+    })
+
+    const changeTheme = (event:any) => {
+        //get variable pass in
+        const themeOption:any = event.target.innerHTML
+        console.log("event.target.HTML: ", themeOption)
+
+        //update site theme
+        document.getElementsByTagName("html")[0].dataset.theme = themeOption
+
+        //updateStore for site Theme
+        $siteThemeStore = themeOption
+        console.log("Updated site theme to: " + $siteThemeStore, $siteThemeStore.toString())
+
+        //updateStore for code Theme
+        $codeThemeStore  = themeOption == "light" ? agate : ashes
+        console.log("Updated code theme to: " + $codeThemeStore) 
+
     }
-
-    const builtInStyles: styles = {
-        "light": agate,
-        "dark": ashes
-    }
-
-    //const themes:string[] = ["light", "dark"]
-    let chosenTheme:string = "light"
-    $codeTheme = builtInStyles[chosenTheme]
-
-    const onClickChangeTheme = (event:any) => {
-        chosenTheme = event.target.innerHTML
-        $codeTheme = builtInStyles[chosenTheme]
-        document.getElementsByTagName("html")[0].dataset.theme = chosenTheme;
-        console.log("Updated chosen theme to: " + $codeTheme) 
-    };
 
     
 </script>
@@ -36,6 +40,6 @@
     <li><button on:click={onClickChangeTheme}>{theme}</button></li>
     {/each}
     -->
-    <li><button on:click={onClickChangeTheme} class="uppercase">light</button></li>
-    <li><button on:click={onClickChangeTheme} class="uppercase">dark</button></li>
+    <li><button on:click={changeTheme} class="uppercase">light</button></li>
+    <li><button on:click={changeTheme} class="uppercase">dark</button></li>
 </ul>

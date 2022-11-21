@@ -1,10 +1,17 @@
 <script lang="ts">
     import type { Language } from "src/stores";
-    import {DefaultLanguage, testPrint} from "../stores"; 
+    import {DefaultLanguage, testPrint, siteTheme} from "../stores"; 
+    import { onMount } from "svelte"
     import LangChoose from "./LangChoose.svelte";
     import LangTable from "./LangTable.svelte";
     let lang1:Language = DefaultLanguage
     let lang2:Language = DefaultLanguage
+
+    /*
+    onMount(()=>{
+        document.getElementsByTagName("html")[0].dataset.theme = "light"
+        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
+    })*/
 
 </script>
 
