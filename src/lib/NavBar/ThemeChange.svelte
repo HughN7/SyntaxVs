@@ -1,11 +1,13 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import { siteTheme,codeTheme } from "../../stores";
-    import {onMount} from "svelte"; 
+    import {siteTheme,codeTheme} from "../../stores";
+    import {onMount} from "svelte";
+    import {themeChange} from "theme-change" 
 
     $codeTheme = $siteTheme.toString() == "light" ? agate : ashes  
     onMount(()=>{
         document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
+        themeChange(false)
     })
 
     const changeTheme = (event:any) => {
@@ -23,7 +25,15 @@
         //updateStore for code Theme
         $codeTheme = themeOption == "light" ? agate : ashes
         console.log("Updated code theme to: " + $codeTheme) 
+    }
 
+    const changeCodeTheme = async (event:any) =>{
+        //Letting site theme to be handled by package
+        let theme = localStorage.getItem("theme")
+        console.log("package theme: ", theme)
+
+        $codeTheme = theme == "light" ? agate : ashes
+        console.log("Updated code theme to: " + $codeTheme) 
     }
 
     
@@ -40,6 +50,11 @@
     <li><button on:click={onClickChangeTheme}>{theme}</button></li>
     {/each}
     -->
-    <li><button on:click={changeTheme} class="uppercase">light</button></li>
-    <li><button on:click={changeTheme} class="uppercase">dark</button></li>
+    <!--li><button on:click={changeTheme} class="uppercase">light</button></li-->
+    <!--li><button on:click={changeTheme} class="uppercase">dark</button></li-->
+
+    <!-- Yes, this looks wierd, but it works-->
+    <li on:click={changeCodeTheme}><button data-set-theme="light" >Light</button></li>
+    <li on:click={changeCodeTheme}><button data-set-theme="dark" >Dark</button></li>
 </ul>
+ 

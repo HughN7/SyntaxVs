@@ -1,8 +1,8 @@
 import { writable } from "svelte/store";
 import { browser } from "$app/environment"
 
-const siteTheme = writable(browser && (localStorage.getItem("siteTheme") || "light"));
-siteTheme.subscribe((value:any) => browser && (localStorage.setItem("siteTheme", value)));
+const siteTheme = writable(browser && (localStorage.getItem("theme") || "light"));
+siteTheme.subscribe((value:any) => browser && (localStorage.setItem("theme", value)));
 
 const codeTheme = writable(browser && (localStorage.getItem("codeTheme") || "ashes"));
 codeTheme.subscribe((value:any) => browser && (localStorage.setItem("codeTheme", value)));
