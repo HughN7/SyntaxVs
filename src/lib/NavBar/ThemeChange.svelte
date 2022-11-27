@@ -27,7 +27,7 @@
         console.log("Updated code theme to: " + $codeTheme) 
     }
 
-    const changeCodeTheme = async (event:any) =>{
+    const changeCodeTheme = (event:any) =>{
         //Letting site theme to be handled by package
         let theme = localStorage.getItem("theme")
         console.log("package theme: ", theme)
@@ -54,7 +54,7 @@
     <!--li><button on:click={changeTheme} class="uppercase">dark</button></li-->
 
     <!-- Yes, this looks wierd, but it works-->
-    <li on:click={changeCodeTheme}><button data-set-theme="light" >Light</button></li>
-    <li on:click={changeCodeTheme}><button data-set-theme="dark" >Dark</button></li>
+    <li on:click={changeCodeTheme}><button data-set-theme="light" class="uppercase">Light</button></li>
+    <li on:click={changeCodeTheme}><button data-set-theme="dark" class="uppercase">Dark</button></li>
 </ul>
  
