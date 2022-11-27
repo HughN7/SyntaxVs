@@ -6,7 +6,7 @@
 
     $codeTheme = $siteTheme.toString() == "light" ? agate : ashes  
     onMount(()=>{
-        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
+        //document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
         themeChange(false)
     })
 
