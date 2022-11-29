@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { Language } from "src/stores";
-    import {DefaultLanguage, testPrint, siteTheme} from "../stores"; 
+    import {DefaultLanguage, siteTheme} from "../stores"; 
     import { onMount } from "svelte"
     import LangChoose from "./LangChoose.svelte";
     import LangTable from "./LangTable.svelte";

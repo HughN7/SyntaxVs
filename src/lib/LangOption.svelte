@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { LanguageStore, type  Language } from "../stores"
+    import { LanguageStore, ProgrammingLanguagesDB, type  Language } from "../stores"
     import { supabase } from './supaBaseClient'
     import { onMount } from "svelte"
     
@@ -45,15 +45,23 @@
     <option disabled selected></option>
     
     
-    {#each $LanguageStore as item (item.id)}
+    {#each $LanguageStore as item}
     <option value={item}>
         {item.language}
     </option>
     {/each}
 
+    {#each $ProgrammingLanguagesDB as pLang (pLang.id)}
+    <option value={pLang.id}>
+        {pLang.lang}
+    </option>
+    {/each}
+
+    <!--
     {#each languageList as codingLanguage (codingLanguage.id)}
     <option value={codingLanguage.Language}>
         {codingLanguage.Language}
     </option>
     {/each}
+    -->
 </select>

@@ -61,7 +61,14 @@ export const LanguageStore = writable([
     Python, Java, Cpp
 ])
 
+export const ProgrammingLanguagesDB = writable([{
+    id:0, 
+    lang:"C"
+}])
 
+
+
+/*
 export const testPrint = writable(
     browser && (localStorage.getItem("testPrint") || "There")
 );
@@ -69,3 +76,4 @@ export const testPrint = writable(
 testPrint.subscribe(
     (value:any) => browser && (localStorage.setItem("testPrint", value)
 ));
+*/
