@@ -1,11 +1,10 @@
 <script lang="ts">
-    import {LanguageStore} from "../stores"
-    import type { Language } from "../stores";
+    import { LanguageStore, type  Language } from "../stores"
     import { supabase } from './supaBaseClient'
-    import {onMount} from "svelte"
+    import { onMount } from "svelte"
+    
     export let chosenLanguage: Language; 
-
-    let languageList: any[] = [];
+    let languageList: any[];
     let fetched: boolean = false
 
     onMount(()=>{
