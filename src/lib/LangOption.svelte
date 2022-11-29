@@ -1,44 +1,6 @@
 <script lang="ts">
     import { LanguageStore, ProgrammingLanguagesDB, type  Language } from "../stores"
-    import { supabase } from './supaBaseClient'
-    import { onMount } from "svelte"
-    
     export let chosenLanguage: Language; 
-    let languageList: any[];
-    let fetched: boolean = false
-
-    onMount(()=>{
-        fetchLanguages()
-        fetchLanguages().then(
-            function(value) {
-                console.log(value);  
-                console.log("Data stored: ", languageList)
-                console.log("Test retrieval: ", typeof(languageList[0].Language))
-            }
-        )
-    })
-
-    async function fetchLanguages(){
-        fetched = true
-        try{
-            let { data, error, status } = await supabase
-            .from('Languages')
-            .select('id, Language')
-            
-
-            if (error && status !== 406) throw error
-
-            if(data){
-                console.log("Data retrieved from DB: ", data)
-                languageList = data
-            }
-
-        }catch(error){
-            console.log("Error: ", error)
-            fetched = false
-        }
-        return fetched
-    }
 
 </script>
 <select bind:value={chosenLanguage} class="text-3xl font-bold select select-ghost select-sm w-auto max-w-xs h-fit">
@@ -53,7 +15,7 @@
 
     {#each $ProgrammingLanguagesDB as pLang (pLang.id)}
     <option value={pLang.id}>
-        {pLang.lang}
+        {pLang.Language}
     </option>
     {/each}
 

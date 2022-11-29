@@ -63,7 +63,7 @@ export const LanguageStore = writable([
 
 export const ProgrammingLanguagesDB = writable([{
     id:0, 
-    lang:"C"
+    Language:"C"
 }])
 
 
