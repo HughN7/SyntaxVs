@@ -1,13 +1,13 @@
 <script lang="ts">
-    import LangOption from "./LangOption.svelte";
-    import {ProgrammingLanguagesDB, type Language} from "../stores"
-    import { supabase } from './supaBaseClient'
+    import LangOption from "./LangDropDown.svelte";
+    import {ProgrammingLanguagesDB, type Language} from "../../stores"
+    import { supabase } from '../supaBaseClient'
     import { onMount } from "svelte"
     
     export let lang1Option:Language;
     export let lang2Option:Language;
 
-    //Load into store
+    //Load language list from db into store
     let fetched: boolean = false
 
     function mount(){

@@ -2,7 +2,7 @@
     import type { Language } from "src/stores";
     import {DefaultLanguage, siteTheme} from "../stores"; 
     import { onMount } from "svelte"
-    import LangChoose from "./LangChoose.svelte";
+    import LangChoose from "./ChooseLanguage/LangVsDisplay.svelte";
     import LangTable from "./LangTable.svelte";
     let lang1:Language = DefaultLanguage
     let lang2:Language = DefaultLanguage

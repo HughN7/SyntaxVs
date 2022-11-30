@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { LanguageStore, ProgrammingLanguagesDB, type  Language } from "../stores"
+    import { LanguageStore, ProgrammingLanguagesDB, type  Language } from "../../stores"
     export let chosenLanguage: Language; 
 
 </script>
