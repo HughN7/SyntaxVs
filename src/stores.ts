@@ -59,13 +59,15 @@ const Cpp:Language = {
 
 export const LanguageStore = writable([
     Python, Java, Cpp
-])
+]); 
 
 export const ProgrammingLanguagesDB = writable([{
     id:0, 
     Language:"C"
-}])
+}]); 
 
+export const ChosenLanguage1ID = writable(0); 
+export const ChosenLanguage2ID = writable(0); 
 
 
 /*
