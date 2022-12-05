@@ -1,9 +1,8 @@
 <script lang="ts">
-    import type { Language } from "src/stores";
-    import {DefaultLanguage, siteTheme} from "../stores"; 
-    import { onMount } from "svelte"
-    import LangChoose from "./ChooseLanguage/LangVsDisplay.svelte";
-    import LangTable from "./LangTable.svelte";
+    import {DefaultLanguage, siteTheme, type Language} from "../stores"; 
+    import LangChoose from "$lib/ChooseLanguage/LangVsDisplay.svelte";
+    import LangTable from "$lib/LangTable.svelte";
+    import LangTableFromDB from "$lib/LangTableFromDB.svelte"
     let lang1:Language = DefaultLanguage
     let lang2:Language = DefaultLanguage
 
@@ -26,7 +25,8 @@
             <h1 class="text-3xl font-bold"><LangChoose bind:lang1Option={lang1} bind:lang2Option={lang2}/></h1>
         </div>
         <div>
-            <LangTable bind:lang1={lang1} bind:lang2={lang2}/>
+            <!--LangTable bind:lang1={lang1} bind:lang2={lang2}/-->
+            <LangTableFromDB/>
         </div>
     </div>
 </div>
