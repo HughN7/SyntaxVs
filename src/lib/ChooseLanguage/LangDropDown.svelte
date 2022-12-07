@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { LanguageStore, ProgrammingLanguagesDB, type Language } from "../../stores"
-    export let chosenLanguage: Language, chosenLanguageID: number; 
+    import { LanguageList} from "../../stores"
+    export let chosenLanguageID: number; 
 
 </script>
 <select bind:value={chosenLanguageID} on:change class="text-3xl font-bold select select-ghost select-sm w-auto max-w-xs h-fit">
@@ -13,9 +13,9 @@
     </option>
     {/each}-->
 
-    {#each $ProgrammingLanguagesDB as pLang (pLang.id)}
-    <option value={pLang.id}>
-        {pLang.Language}
+    {#each $LanguageList as language (language.id)}
+    <option value={language.id}>
+        {language.Language}
     </option>
     {/each}
 

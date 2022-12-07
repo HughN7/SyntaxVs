@@ -1,6 +1,6 @@
 <script lang="ts">
     import {DefaultLanguage, siteTheme, type Language} from "../stores"; 
-    import LangChoose from "$lib/ChooseLanguage/LangVsDisplay.svelte";
+    import LangVsDisplay from "$lib/ChooseLanguage/LangVsDisplay.svelte";
     import LangTable from "$lib/LangTable.svelte";
     import LangTableFromDB from "$lib/LangTableFromDB.svelte"
     let lang1:Language = DefaultLanguage
@@ -22,7 +22,7 @@
 <div class="hero min-h-screen bg-base-200">
     <div class="text-center">
         <div class="hero-content">
-            <h1 class="text-3xl font-bold"><LangChoose bind:lang1Option={lang1} bind:lang2Option={lang2}/></h1>
+            <h1 class="text-3xl font-bold"><LangVsDisplay/></h1>
         </div>
         <div>
             <!--LangTable bind:lang1={lang1} bind:lang2={lang2}/-->

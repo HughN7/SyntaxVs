@@ -61,13 +61,25 @@ export const LanguageStore = writable([
     Python, Java, Cpp
 ]); 
 
-export const ProgrammingLanguagesDB = writable([{
+export const LanguageList = writable([{
     id:0, 
     Language:"C"
 }]); 
 
+const defaultLang = {
+    id: 1,
+    created_at: "2022-11-24T06:04:07.612586+00:00",
+    Language: "Python",
+    Printing: "print(\"Hello There\")",
+    Integer: "someVariable = 1",
+    Decimal: "someVariable = 6.9",
+    String: "someVariable = \"Hello There\""
+}
+
 export const ChosenLanguage1ID = writable(0); 
 export const ChosenLanguage2ID = writable(0); 
+export const ChosenLanguage1 = writable(defaultLang)
+export const ChosenLanguage2 = writable(defaultLang)
 
 
 /*
