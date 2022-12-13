@@ -1,16 +1,32 @@
 <script lang="ts">
-    import LangVsDisplay from "$lib/ChooseLanguage/LangVsDisplay.svelte";
-    import LangTableFromDB from "$lib/LangTableFromDB.svelte"
+    import type { Language } from "src/stores";
+    import {DefaultLanguage, testPrint, siteTheme} from "../stores"; 
+    import { onMount } from "svelte"
+    import LangChoose from "./LangChoose.svelte";
+    import LangTable from "./LangTable.svelte";
+    let lang1:Language = DefaultLanguage
+    let lang2:Language = DefaultLanguage
+
+    /*
+    onMount(()=>{
+        document.getElementsByTagName("html")[0].dataset.theme = "light"
+        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
+    })*/
 
 </script>
+
+
+<!--input type="text" placeholder="Type here" class="input input-ghost w-full max-w-xs" bind:value={$testPrint}/-->
+
+
 
 <div class="hero min-h-screen bg-base-200">
     <div class="text-center">
         <div class="hero-content">
-            <h1 class="text-3xl font-bold"><LangVsDisplay/></h1>
+            <h1 class="text-3xl font-bold"><LangChoose bind:lang1Option={lang1} bind:lang2Option={lang2}/></h1>
         </div>
         <div>
-            <LangTableFromDB/>
+            <LangTable bind:lang1={lang1} bind:lang2={lang2}/>
         </div>
     </div>
 </div>

@@ -1,13 +1,11 @@
 <script lang="ts">
     import {ashes, agate} from "svelte-highlight/styles"
-    import {siteTheme,codeTheme} from "../../stores";
-    import {onMount} from "svelte";
-    import {themeChange} from "theme-change" 
+    import { siteTheme,codeTheme } from "../../stores";
+    import {onMount} from "svelte"; 
 
     $codeTheme = $siteTheme.toString() == "light" ? agate : ashes  
     onMount(()=>{
-        //document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
-        themeChange(false)
+        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
     })
 
     const changeTheme = (event:any) => {
@@ -25,15 +23,7 @@
         //updateStore for code Theme
         $codeTheme = themeOption == "light" ? agate : ashes
         console.log("Updated code theme to: " + $codeTheme) 
-    }
 
-    const changeCodeTheme = (event:any) =>{
-        //Letting site theme to be handled by package
-        let theme = localStorage.getItem("theme")
-        console.log("package theme: ", theme)
-
-        $codeTheme = theme == "light" ? agate : ashes
-        console.log("Updated code theme to: " + $codeTheme) 
     }
 
     
@@ -50,11 +40,6 @@
     <li><button on:click={onClickChangeTheme}>{theme}</button></li>
     {/each}
     -->
-    <!--li><button on:click={changeTheme} class="uppercase">light</button></li-->
-    <!--li><button on:click={changeTheme} class="uppercase">dark</button></li-->
-
-    <!-- Yes, this looks wierd, but it works-->
-    <li on:click={changeCodeTheme}><button data-set-theme="light" class="uppercase">Light</button></li>
-    <li on:click={changeCodeTheme}><button data-set-theme="dark" class="uppercase">Dark</button></li>
+    <li><button on:click={changeTheme} class="uppercase">light</button></li>
+    <li><button on:click={changeTheme} class="uppercase">dark</button></li>
 </ul>
- 

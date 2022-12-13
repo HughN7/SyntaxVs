@@ -35,8 +35,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-helpers-sveltekit": "^0.8.6",
-		"@supabase/supabase-js": "^2.1.1",
 		"daisyui": "^2.31.0",
 		"svelte-highlight": "^6.2.1",
 		"theme-change": "^2.2.0"
