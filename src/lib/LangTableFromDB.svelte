@@ -1,41 +1,53 @@
 <script lang="ts">
     import { HighlightAuto } from "svelte-highlight"; 
     import { codeTheme, ChosenLanguage1, ChosenLanguage2 } from "../stores";
-    import { onMount } from "svelte"; 
-    import { supabase } from '$lib/supaBaseClient'
-	import { solarizedDark } from "svelte-highlight/styles";
-	import { get } from "svelte/store";
-
-    /*
-    const defaultLang = {
-        id: 1,
-        created_at: "2022-11-24T06:04:07.612586+00:00",
-        Language: "Python",
-        Printing: "print(\"Hello There\")",
-        Integer: "someVariable = 1",
-        Decimal: "someVariable = 6.9",
-        String: "someVariable = \"Hello There\""
-    }*/
-
-    //onMount(mount)
+    
 </script>
 
 <svelte:head>
     {@html $codeTheme}
 </svelte:head>
 
-<div class="border-2 p-2">
-    Chosen Language 1: 
-    <div>
-        {$ChosenLanguage1.Language} 
-    </div>
-</div>
-<div>
-    
-</div>
-<div class="border-2 p-2">
-    Chosen Language 2: 
-    <div>
-        {$ChosenLanguage2.Language}
-    </div>
+<div class="overflow-x-auto border-2 border-slate-900">
+    <table class="table w-full">
+        <!-- head -->
+        <thead>
+        <tr>
+            <th>0</th>
+            <th>Type</th>
+            <th>{$ChosenLanguage1.Language}</th>
+            <th>{$ChosenLanguage2.Language}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- row 1 -->
+        <tr class="hover">
+            <th>1</th>
+            <td>Printing</td>
+            <td><HighlightAuto code={$ChosenLanguage1.Printing}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Printing}/></td>
+        </tr>
+        <!-- row 2 -->
+        <tr class="hover">
+            <th>2</th>
+            <td>String</td>
+            <td><HighlightAuto code={$ChosenLanguage1.String}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.String}/></td>
+        </tr>
+        <!-- row 3 -->
+        <tr class="hover">
+            <th>3</th>
+            <td>Integers</td>
+            <td><HighlightAuto code={$ChosenLanguage1.Integer}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Integer}/></td>
+        </tr>
+        <!-- row 4 -->
+        <tr class="hover">
+            <th>4</th>
+            <td>Decimals</td>
+            <td><HighlightAuto code={$ChosenLanguage1.Decimal}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Decimal}/></td>
+        </tr>
+        </tbody>
+    </table>
 </div>

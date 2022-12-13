@@ -1,16 +1,8 @@
 <script lang="ts">
-    import {DefaultLanguage, siteTheme, type Language} from "../stores"; 
+    import {siteTheme} from "../stores"; 
     import LangVsDisplay from "$lib/ChooseLanguage/LangVsDisplay.svelte";
     import LangTable from "$lib/LangTable.svelte";
     import LangTableFromDB from "$lib/LangTableFromDB.svelte"
-    let lang1:Language = DefaultLanguage
-    let lang2:Language = DefaultLanguage
-
-    /*
-    onMount(()=>{
-        document.getElementsByTagName("html")[0].dataset.theme = "light"
-        document.getElementsByTagName("html")[0].dataset.theme = $siteTheme.toString()
-    })*/
 
 </script>
 

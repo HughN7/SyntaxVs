@@ -57,7 +57,6 @@
         )
     }
     
-
     //Fetch language info for the two chosen id's
     async function fetchAllLanguageInfo(){
         fetchedAllLangInfo = true;
@@ -65,7 +64,6 @@
             const {data, error, status} = await supabase
                 .from('Languages')
                 .select("*")
-                //.eq("id", $ChosenLanguage1ID && ChosenLanguage2ID)
                 .in("id", [lang1ID, lang2ID])
 
             if (error && status !== 406){
@@ -75,15 +73,18 @@
             if(data){
                 console.log("Data retrieved for table: ", data)
                 if(data.length < 2){
+                    //If we're comparing the same language in both columns
                     $ChosenLanguage1 = $ChosenLanguage2 = data[0]
                 }else{
-                   if(data[0].id == lang1ID){
-                    $ChosenLanguage1 = data[0]
-                    $ChosenLanguage2 = data[1]
-                   }else{
-                    $ChosenLanguage1 = data[1]
-                    $ChosenLanguage2 = data[0]
-                   }
+                    //Because we're querying DB with .in, need to assign language to correct column
+                    //First lang - column1, second lang - column2
+                    if(data[0].id == lang1ID){
+                        $ChosenLanguage1 = data[0]
+                        $ChosenLanguage2 = data[1]
+                    }else{
+                        $ChosenLanguage1 = data[1]
+                        $ChosenLanguage2 = data[0]
+                    }
                 }
                 console.log("\nchosen lang 1 id: ", lang1ID, $ChosenLanguage1)
                 console.log("chosen lang 2 id: ", lang2ID, $ChosenLanguage2, "\n")
