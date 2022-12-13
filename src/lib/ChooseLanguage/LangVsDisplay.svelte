@@ -106,11 +106,3 @@
     Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchAllLanguageInfo}/> 
     syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchAllLanguageInfo}/> syntax
 </div>
-<!--div>
-    <button on:click={()=>console.log("First Language ID", $ChosenLanguage1ID)} class="btn btn-primary">
-        Console Log: {$ChosenLanguage1ID}| Lang1ID Passed {lang1ID}
-    </button>
-    <button on:click={()=>console.log("Second Language ID", $ChosenLanguage2ID)} class="btn btn-primary">
-        Console Log: {$ChosenLanguage2ID}| Lang2ID Passed {lang2ID}
-    </button>
-</div-->
