@@ -34,9 +34,9 @@
         </tr>
         <tr class="hover">
             <th>2</th>
-            <td>Comment</td>
-            <td><HighlightAuto code={$ChosenLanguage1.Printing}/></td>
-            <td><HighlightAuto code={$ChosenLanguage2.Printing}/></td>
+            <td>Comments</td>
+            <td><HighlightAuto code={$ChosenLanguage1.Comments}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Comments}/></td>
         </tr>
         <tr class="hover">
             <th>3</th>
@@ -59,20 +59,20 @@
         <tr class="hover">
             <th>6</th>
             <td>Conditional</td>
-            <td><HighlightAuto code={$ChosenLanguage1.Decimal}/></td>
-            <td><HighlightAuto code={$ChosenLanguage2.Decimal}/></td>
+            <td><HighlightAuto code={$ChosenLanguage1.Conditional}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Conditional}/></td>
         </tr>
         <tr class="hover">
             <th>7</th>
             <td>Loop</td>
-            <td><HighlightAuto code={$ChosenLanguage1.Decimal}/></td>
-            <td><HighlightAuto code={$ChosenLanguage2.Decimal}/></td>
+            <td><HighlightAuto code={$ChosenLanguage1.Loop}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Loop}/></td>
         </tr>
         <tr class="hover">
             <th>8</th>
             <td>Array/List<br>Like</td>
-            <td><HighlightAuto code={$ChosenLanguage1.Decimal}/></td>
-            <td><HighlightAuto code={$ChosenLanguage2.Decimal}/></td>
+            <td><HighlightAuto code={$ChosenLanguage1.Array_List_Like}/></td>
+            <td><HighlightAuto code={$ChosenLanguage2.Array_List_Like}/></td>
         </tr>
         </tbody>
     </table>
