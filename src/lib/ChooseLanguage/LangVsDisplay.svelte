@@ -102,7 +102,7 @@
 
 </script>
 
-<div>
+<div class="">
     Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchAllLanguageInfo}/> 
     syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchAllLanguageInfo}/> syntax
 </div>
