@@ -53,8 +53,10 @@
     <!--li><button on:click={changeTheme} class="uppercase">light</button></li-->
     <!--li><button on:click={changeTheme} class="uppercase">dark</button></li-->
 
-    <!-- Yes, this looks wierd, but it works-->
+    <!-- Yes, this looks weird, but it works-->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <li on:click={changeCodeTheme}><button data-set-theme="light" class="uppercase">Light</button></li>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <li on:click={changeCodeTheme}><button data-set-theme="dark" class="uppercase">Dark</button></li>
 </ul>
  

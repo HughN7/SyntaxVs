@@ -26,7 +26,8 @@ const defaultLang = {
     String: "someVariable = \"Hello There\"",
     Conditional: "if not(2 > 1 and 3 > 1) or \"Green\" == \"green\"):\n     print(\"Conditiona\")", 
     Loop: "for cookies_count in range(0,7):\n       print(\"Eating cookie\", cookies_count)",
-    Array_List_Like: "some_list = [\"can store different datatypes\", 1, False, [\"another\", \"list\"]]"
+    Array: "N/A - See Numpy Arrays",
+    List: "some_list = [\"can store different datatypes\", 1, False, [\"another\", \"list\"]]"
 }
 
 export const ChosenLanguage1 = writable(defaultLang)

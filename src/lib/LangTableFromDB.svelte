@@ -70,9 +70,15 @@
             </tr>
             <tr class="hover font-bold">
                 <th>8</th>
-                <td>Array/List<br>Like</td>
-                <td><HighlightAuto code={$ChosenLanguage1.Array_List_Like}/></td>
-                <td><HighlightAuto code={$ChosenLanguage2.Array_List_Like}/></td>
+                <td>Array</td>
+                <td><HighlightAuto code={$ChosenLanguage1.Array}/></td>
+                <td><HighlightAuto code={$ChosenLanguage2.Array}/></td>
+            </tr>
+            <tr class="hover font-bold">
+                <th>9</th>
+                <td>List</td>
+                <td><HighlightAuto code={$ChosenLanguage1.List}/></td>
+                <td><HighlightAuto code={$ChosenLanguage2.List}/></td>
             </tr>
         </tbody>
     </table>
