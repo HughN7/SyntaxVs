@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="navbar bg-neutral-100">
+<div class="navbar bg-neutral-100"> 
   <div class="navbar-start flex-1">
     <a class="btn btn-ghost normal-case text-3xl" href="#home">Syntax Vs.</a>
   </div>

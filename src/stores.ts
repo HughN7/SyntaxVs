@@ -20,9 +20,14 @@ const defaultLang = {
     created_at: "2022-11-24T06:04:07.612586+00:00",
     Language: "Python",
     Printing: "print(\"Hello There\")",
+    Comments: "#This is a comment", 
     Integer: "someVariable = 1",
     Decimal: "someVariable = 6.9",
-    String: "someVariable = \"Hello There\""
+    String: "someVariable = \"Hello There\"",
+    Conditional: "if not(2 > 1 and 3 > 1) or \"Green\" == \"green\"):\n     print(\"Conditiona\")", 
+    Loop: "for cookies_count in range(0,7):\n       print(\"Eating cookie\", cookies_count)",
+    Array: "N/A - See Numpy Arrays",
+    List: "some_list = [\"can store different datatypes\", 1, False, [\"another\", \"list\"]]"
 }
 
 export const ChosenLanguage1 = writable(defaultLang)
