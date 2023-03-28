@@ -1,6 +1,6 @@
 <script lang="ts">
     import LangVsDisplay from "$lib/ChooseLanguage/LangVsDisplay.svelte";
-    import LangTableFromDB from "$lib/LangTableFromDB.svelte"
+    import LangTableFromDB from "$lib/Table/LangTableFromDB.svelte"
 
 </script>
 

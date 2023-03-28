@@ -27,7 +27,8 @@ const defaultLang = {
     Conditional: "if not(2 > 1 and 3 > 1) or \"Green\" == \"green\"):\n     print(\"Conditiona\")", 
     Loop: "for cookies_count in range(0,7):\n       print(\"Eating cookie\", cookies_count)",
     Array: "N/A - See Numpy Arrays",
-    List: "some_list = [\"can store different datatypes\", 1, False, [\"another\", \"list\"]]"
+    List: "some_list = [\"can store different datatypes\", 1, False, [\"another\", \"list\"]]",
+    Map: "map_called_dictionary = {1: \"dictionary is ordered\", 2: \"if using py 3.7 >\", \"hello there\": \"general kenobi!\"}"
 }
 
 export const ChosenLanguage1 = writable(defaultLang)
