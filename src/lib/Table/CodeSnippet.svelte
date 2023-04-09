@@ -30,7 +30,7 @@
 	{#if link_visible}
 		<a
 			href={lang_property_info_link}
-			class="absolute top-7 right-7 btn btn-sm btn-outline btn-circle btn-accent"
+			class="absolute top-7 right-6 btn btn-sm btn-info btn-circle"
 			transition:fade
 		>
 			<span class="material-symbols-outlined ">read_more</span>
