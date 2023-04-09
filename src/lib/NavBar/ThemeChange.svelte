@@ -20,6 +20,8 @@
 	};
 </script>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 <a class="btn btn-ghost" href="#theme">
 	Theme
 	<svg
@@ -32,7 +34,7 @@
 		<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
 	</svg>
 </a>
-<ul class="p-2 shadow bg-base-100 rounded-box w-28 text-sm">
+<ul class="shadow bg-base-100 w-28 h-auto text-sm ml-8 z-10">
 	<!--
     {#each themes as theme}
     <li><button on:click={onClickChangeTheme}>{theme}</button></li>
@@ -44,8 +46,38 @@
 	<!-- Yes, this looks weird, but it works-->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<li on:click={changeCodeTheme}>
-		<button data-set-theme="light" class="uppercase">Light</button>
+		<button data-set-theme="light" class="uppercase">
+            Light
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a class="pl-2">
+                <span class="material-symbols-outlined">
+                    light_mode
+                </span>
+            </a>
+        </button>
 	</li>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<li on:click={changeCodeTheme}><button data-set-theme="dark" class="uppercase">Dark</button></li>
+	<li on:click={changeCodeTheme}>
+        <button data-set-theme="dark" class="uppercase">
+            Dark
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a class="pl-2">
+                <span class="material-symbols-outlined">
+                    dark_mode
+                </span>
+            </a>
+            
+        </button>
+    </li>
 </ul>
+
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+    }
+</style>
