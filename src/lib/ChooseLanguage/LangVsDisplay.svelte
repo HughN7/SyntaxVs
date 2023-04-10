@@ -2,45 +2,15 @@
 	import LangDropDown from '$lib/ChooseLanguage/LangDropDown.svelte';
 	import { LanguageList, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import { supabase } from '$lib/supaBaseClient';
-	import { onMount } from 'svelte';
+	
 
 	let lang1ID: number = 0,
 		lang2ID: number = 0;
-	let fetchedLangList: boolean = false,
-		fetchedAllLangInfo: boolean = false;
-
-	//Fetch Language List, then logs
-	function runFetchLanguageList() {
-		fetchLanguageList().then(function (value: boolean) {
-			console.log('\nFetched Lang List?: ', value);
-			console.log('Data stored: ', $LanguageList);
-			//console.log("Test retrieval datatype: ", typeof($LanguageList[0].Language))
-		});
-	}
-
-	//Fetch a list of all language id's & names
-	async function fetchLanguageList() {
-		fetchedLangList = true;
-		try {
-			let { data, error, status } = await supabase.from('Languages').select('id, Language');
-
-			if (error && status !== 406) throw error;
-
-			if (data) {
-				//console.log("Data retrieved from DB: ", data)
-				$LanguageList = data;
-				//languageListFromDB = data
-			}
-		} catch (error) {
-			console.log('Error | Fetched A List of Language ID & Name: ', error);
-			fetchedLangList = false;
-		}
-		return fetchedLangList;
-	}
+	let fetchedChosenLangInfo: boolean = false
 
 	//Fetch language Info, then logs
-	function runFetchAllLanguageInfo() {
-		fetchAllLanguageInfo().then(function (value: boolean) {
+	function runFetchChosenLanguageInfo() {
+		fetchChosenLanguageInfo().then(function (value: boolean) {
 			console.log('\nFetched Lang Info?: ', value);
 			console.log('Data stored: ', $LanguageList);
 
@@ -51,8 +21,8 @@
 	}
 
 	//Fetch language info for the two chosen id's
-	async function fetchAllLanguageInfo() {
-		fetchedAllLangInfo = true;
+	async function fetchChosenLanguageInfo() {
+		fetchedChosenLangInfo = true;
 		try {
 			const { data, error, status } = await supabase
 				.from('Languages')
@@ -84,16 +54,15 @@
 			}
 		} catch (error) {
 			console.log('Error | Fetching All Language Information: ', error);
-			fetchedAllLangInfo = false;
+			fetchedChosenLangInfo = false;
 		}
 
-		return fetchedAllLangInfo;
+		return fetchedChosenLangInfo;
 	}
 
-	onMount(runFetchLanguageList);
 </script>
 
 <div class="">
-	Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchAllLanguageInfo} />
-	syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchAllLanguageInfo} /> syntax
+	Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchChosenLanguageInfo} />
+	syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchChosenLanguageInfo} /> syntax
 </div>
