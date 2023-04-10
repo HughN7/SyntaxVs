@@ -34,7 +34,7 @@
 		<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
 	</svg>
 </a>
-<ul class="shadow bg-base-100 w-28 h-auto text-sm ml-8 z-10">
+<ul class="bg-base-100 w-28 h-auto text-sm ml-8 drop-shadow-xl">
 	<!--
     {#each themes as theme}
     <li><button on:click={onClickChangeTheme}>{theme}</button></li>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { HighlightAuto } from 'svelte-highlight';
 	import { codeTheme, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import TableRow from '$lib/Table/TableRow.svelte';
 
@@ -17,7 +16,7 @@
 	{@html $codeTheme}
 </svelte:head>
 
-<div class="overflow-x-auto rounded-lg shadow-2xl">
+<div class="overflow-x-auto rounded-lg shadow-2xl pt-5">
 	<table class="table table-zebra w-full">
 		<!-- head -->
 		<thead>
@@ -86,6 +85,12 @@
 			<TableRow
 				row_number={10}
 				row_name="Map-Like"
+				lang1_property={$ChosenLanguage1.Map}
+				lang2_property={$ChosenLanguage2.Map}
+			/>
+			<TableRow
+				row_number={11}
+				row_name="Class"
 				lang1_property={$ChosenLanguage1.Map}
 				lang2_property={$ChosenLanguage2.Map}
 			/>
