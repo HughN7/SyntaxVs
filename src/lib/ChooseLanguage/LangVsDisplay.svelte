@@ -2,17 +2,31 @@
 	import LangDropDown from '$lib/ChooseLanguage/LangDropDown.svelte';
 	import { LanguageList, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import { supabase } from '$lib/supaBaseClient';
-	
+	import { onMount } from 'svelte';
 
-	let lang1ID: number = 0,
-		lang2ID: number = 0;
-	let fetchedChosenLangInfo: boolean = false
+	let lang1ID: number = 1; 
+	let lang2ID: number = 2;
+
+	let fetchedChosenLangInfo: boolean = false;
+
+	function handleMessage1(event: { detail: { message: number; }; }) {
+		lang1ID = event.detail.message;
+		lang1ID = lang1ID
+		console.log("Lang1ID updated:", lang1ID)
+		runFetchChosenLanguageInfo()
+	}
+
+	function handleMessage2(event: { detail: { message: number; }; }) {
+		lang2ID = event.detail.message;
+		lang2ID = lang2ID
+		console.log("Lang2ID updated:", lang2ID)
+		runFetchChosenLanguageInfo()
+	}
 
 	//Fetch language Info, then logs
 	function runFetchChosenLanguageInfo() {
 		fetchChosenLanguageInfo().then(function (value: boolean) {
 			console.log('\nFetched Lang Info?: ', value);
-			console.log('Data stored: ', $LanguageList);
 
 			//Reactive assignment for svelte
 			$ChosenLanguage1 = $ChosenLanguage1;
@@ -34,7 +48,7 @@
 			}
 
 			if (data) {
-				console.log('Data retrieved for table: ', data);
+				console.log('===Data retrieved for table=== \n-', data);
 				if (data.length < 2) {
 					//If we're comparing the same language in both columns
 					$ChosenLanguage1 = $ChosenLanguage2 = data[0];
@@ -49,9 +63,14 @@
 						$ChosenLanguage2 = data[0];
 					}
 				}
+				
+				//Reactive assignment for svelte
+				$ChosenLanguage1 = $ChosenLanguage1;
+				$ChosenLanguage2 = $ChosenLanguage2;
 				console.log('\nchosen lang 1 id: ', lang1ID, $ChosenLanguage1);
 				console.log('chosen lang 2 id: ', lang2ID, $ChosenLanguage2, '\n');
 			}
+			console.log("DATA:\n-", data)
 		} catch (error) {
 			console.log('Error | Fetching All Language Information: ', error);
 			fetchedChosenLangInfo = false;
@@ -60,9 +79,24 @@
 		return fetchedChosenLangInfo;
 	}
 
+	onMount(runFetchChosenLanguageInfo)
+
 </script>
 
 <div class="">
-	Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchChosenLanguageInfo} />
-	syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchChosenLanguageInfo} /> syntax
+	Compare 
+	<LangDropDown on:message={handleMessage1}/>
+	syntax with 
+	<LangDropDown on:message={handleMessage2}/> syntax
+</div>
+<div>
+	<button
+		class="btn"
+		on:click={() => {
+			console.log('Chosen Language IDs:', lang1ID, lang2ID);
+			runFetchChosenLanguageInfo()
+		}}
+	>
+		console log
+	</button>
 </div>

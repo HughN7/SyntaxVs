@@ -30,7 +30,9 @@
 			if (data) {
 				//console.log("Data retrieved from DB: ", data)
 				$LanguageList = data;
-				//languageListFromDB = data
+				
+				//Reactive reassignment
+				$LanguageList = $LanguageList
 			}
 		} catch (error) {
 			console.log('Error | Fetched A List of Language ID & Name: ', error);
