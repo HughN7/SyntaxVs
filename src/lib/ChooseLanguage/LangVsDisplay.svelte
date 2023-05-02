@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LangDropDown from '$lib/ChooseLanguage/LangDropDown.svelte';
-	import { LanguageList, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
+	import { ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import { supabase } from '$lib/supaBaseClient';
 	import { onMount } from 'svelte';
 

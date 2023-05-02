@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher, onMount } from 'svelte';
-	import { LanguageList, defaultLang } from '../../stores';
+	import { LanguageList } from '../../stores';
 	import Select from "svelte-select";
 
 	const dispatch = createEventDispatcher();
