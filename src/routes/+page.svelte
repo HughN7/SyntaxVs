@@ -6,9 +6,9 @@
     import { supabase } from '$lib/supaBaseClient';
     import { onMount } from "svelte";
 
-    let fetchedLangList: boolean = false;
-
-    console.log("\n---New Instance:---\n")
+	console.log("\n---New Instance:---\n")
+    /*
+	let fetchedLangList: boolean = false;
 
     //Fetch Language List, then logs
 	function runFetchLanguageList() {
@@ -42,7 +42,7 @@
 	}
 
     onMount(runFetchLanguageList)
-    
+    */
 </script>
 <main>
     <Navbar/>

@@ -7,10 +7,16 @@ siteTheme.subscribe((value:any) => browser && (localStorage.setItem("theme", val
 const codeTheme = writable(browser && (localStorage.getItem("codeTheme") || "ashes"));
 codeTheme.subscribe((value:any) => browser && (localStorage.setItem("codeTheme", value)));
 
-const LanguageList = writable([{
+const LanguageList = writable([
+{
     id:1, 
-    Language:"Python"
-}]); 
+    Language:"Python",
+},
+{
+    id:2, 
+    Language:"Java",
+},
+]); 
 
 /**
     ,{

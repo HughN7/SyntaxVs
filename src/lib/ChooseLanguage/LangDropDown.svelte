@@ -1,20 +1,20 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 	import { LanguageList, defaultLang } from '../../stores';
 	import Select from "svelte-select";
 
 	const dispatch = createEventDispatcher();
 
-	let items = [...$LanguageList]
+	//let items = [...$LanguageList]
+	let items: any; 
 	let justValue: number; 
 
 	function handleChoice(){
 		const data = {message: justValue}
 		dispatch("message", data)
 	}
-
-
-
+	onMount(()=>{items = [...$LanguageList]})
+	
 </script>
 
 <!--select
@@ -30,6 +30,8 @@
 </select-->
 
 <Select class="w-fit" {items} itemId="id" label="Language" bind:justValue on:change={handleChoice}/>
+<button class="btn" on:click={()=>{console.log(items)}}>Test</button>
+
 
 <!--p>
 	{justValue}
