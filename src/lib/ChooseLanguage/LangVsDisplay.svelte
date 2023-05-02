@@ -89,14 +89,3 @@
 	syntax with 
 	<LangDropDown on:message={handleMessage2}/> syntax
 </div>
-<div>
-	<button
-		class="btn"
-		on:click={() => {
-			console.log('Chosen Language IDs:', lang1ID, lang2ID);
-			runFetchChosenLanguageInfo()
-		}}
-	>
-		console log
-	</button>
-</div>
