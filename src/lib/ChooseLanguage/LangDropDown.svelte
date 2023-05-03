@@ -16,4 +16,12 @@
 	
 </script>
 
-<Select class="w-fit" {items} itemId="id" label="Language" bind:justValue on:change={handleChoice}/>
+<div class="mx-2 w-1/5 text-5xl">
+	<Select class="select-option" {items} itemId="id" label="Language" bind:justValue on:change={handleChoice} showChevron --font-size=2.5rem/>
+</div>
+
+<style>
+	:global(.select-option){
+		height: 3.5rem;
+	}
+</style>

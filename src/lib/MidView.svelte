@@ -7,7 +7,7 @@
 <div class="hero min-h-screen bg-base-200">
     <div class="">
         <div class="text-center py-4">
-            <h1 class=" text-5xl font-bold"><LangVsDisplay/></h1>
+            <h1><LangVsDisplay/></h1>
         </div>
         <div>
             <LangTableFromDB/>
