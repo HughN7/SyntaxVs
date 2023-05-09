@@ -83,7 +83,7 @@
 </script>
 
 <span class="mx-auto">
-	<div class="mt-20 flex text-5xl font-bold">
+	<div class="mt-20 flex text-5xl font-bold justify-center">
 		Compare <LangDropDown on:message={handleMessage1}/> and <LangDropDown on:message={handleMessage2}/> Syntax
 	</div>
 </span>
