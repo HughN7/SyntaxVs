@@ -40,7 +40,7 @@
 				row_number={2}
 				row_name="Comments"
 				lang1_property={$ChosenLanguage1.Comments}
-				lang1_property_info={$ChosenLanguage2.Comments_Info}
+				lang1_property_info={$ChosenLanguage1.Comments_Info}
 				lang2_property={$ChosenLanguage2.Comments}
 				lang2_property_info={$ChosenLanguage2.Comments_Info}
 			/>
