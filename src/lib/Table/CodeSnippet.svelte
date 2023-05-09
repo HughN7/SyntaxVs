@@ -30,6 +30,7 @@
 	{#if link_visible}
 		<a
 			href={lang_property_info_link}
+			target="_blank"
 			class="absolute top-7 right-6 btn btn-sm btn-info btn-circle"
 			transition:fade
 		>
