@@ -9,3 +9,4 @@ So what's the difference between using this vs just having two tabs of w3schools
 Rough Roadmap:
 - Add More Languages
 - Create new page dedicated to comparing JS/Web/UI Frameworks
+- Make the site responsive
