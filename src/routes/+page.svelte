@@ -3,7 +3,8 @@
     import MainView from "$lib/MidView.svelte"
     import ScrollToTop from "$lib/ScrollToTop.svelte";
 
-    console.log("\n---New Instance:---\n")
+	console.log("\n---New Instance:---\n")
+    
 </script>
 <main>
     <Navbar/>

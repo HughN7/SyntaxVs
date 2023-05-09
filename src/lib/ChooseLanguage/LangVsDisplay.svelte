@@ -1,48 +1,32 @@
 <script lang="ts">
 	import LangDropDown from '$lib/ChooseLanguage/LangDropDown.svelte';
-	import { LanguageList, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
+	import { ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import { supabase } from '$lib/supaBaseClient';
 	import { onMount } from 'svelte';
 
-	let lang1ID: number = 0,
-		lang2ID: number = 0;
-	let fetchedLangList: boolean = false,
-		fetchedAllLangInfo: boolean = false;
+	let lang1ID: number = 1; 
+	let lang2ID: number = 2;
 
-	//Fetch Language List, then logs
-	function runFetchLanguageList() {
-		fetchLanguageList().then(function (value: boolean) {
-			console.log('\nFetched Lang List?: ', value);
-			console.log('Data stored: ', $LanguageList);
-			//console.log("Test retrieval datatype: ", typeof($LanguageList[0].Language))
-		});
+	let fetchedChosenLangInfo: boolean = false;
+
+	function handleMessage1(event: { detail: { message: number; }; }) {
+		lang1ID = event.detail.message;
+		lang1ID = lang1ID
+		console.log("Lang1ID updated:", lang1ID)
+		runFetchChosenLanguageInfo()
 	}
 
-	//Fetch a list of all language id's & names
-	async function fetchLanguageList() {
-		fetchedLangList = true;
-		try {
-			let { data, error, status } = await supabase.from('Languages').select('id, Language');
-
-			if (error && status !== 406) throw error;
-
-			if (data) {
-				//console.log("Data retrieved from DB: ", data)
-				$LanguageList = data;
-				//languageListFromDB = data
-			}
-		} catch (error) {
-			console.log('Error | Fetched A List of Language ID & Name: ', error);
-			fetchedLangList = false;
-		}
-		return fetchedLangList;
+	function handleMessage2(event: { detail: { message: number; }; }) {
+		lang2ID = event.detail.message;
+		lang2ID = lang2ID
+		console.log("Lang2ID updated:", lang2ID)
+		runFetchChosenLanguageInfo()
 	}
 
 	//Fetch language Info, then logs
-	function runFetchAllLanguageInfo() {
-		fetchAllLanguageInfo().then(function (value: boolean) {
+	function runFetchChosenLanguageInfo() {
+		fetchChosenLanguageInfo().then(function (value: boolean) {
 			console.log('\nFetched Lang Info?: ', value);
-			console.log('Data stored: ', $LanguageList);
 
 			//Reactive assignment for svelte
 			$ChosenLanguage1 = $ChosenLanguage1;
@@ -51,8 +35,8 @@
 	}
 
 	//Fetch language info for the two chosen id's
-	async function fetchAllLanguageInfo() {
-		fetchedAllLangInfo = true;
+	async function fetchChosenLanguageInfo() {
+		fetchedChosenLangInfo = true;
 		try {
 			const { data, error, status } = await supabase
 				.from('Languages')
@@ -64,7 +48,7 @@
 			}
 
 			if (data) {
-				console.log('Data retrieved for table: ', data);
+				console.log('===Data retrieved for table=== \n-', data);
 				if (data.length < 2) {
 					//If we're comparing the same language in both columns
 					$ChosenLanguage1 = $ChosenLanguage2 = data[0];
@@ -79,21 +63,27 @@
 						$ChosenLanguage2 = data[0];
 					}
 				}
+				
+				//Reactive assignment for svelte
+				$ChosenLanguage1 = $ChosenLanguage1;
+				$ChosenLanguage2 = $ChosenLanguage2;
 				console.log('\nchosen lang 1 id: ', lang1ID, $ChosenLanguage1);
 				console.log('chosen lang 2 id: ', lang2ID, $ChosenLanguage2, '\n');
 			}
+			console.log("DATA:\n-", data)
 		} catch (error) {
 			console.log('Error | Fetching All Language Information: ', error);
-			fetchedAllLangInfo = false;
+			fetchedChosenLangInfo = false;
 		}
 
-		return fetchedAllLangInfo;
+		return fetchedChosenLangInfo;
 	}
 
-	onMount(runFetchLanguageList);
+	onMount(runFetchChosenLanguageInfo)
 </script>
 
-<div class="">
-	Compare <LangDropDown bind:chosenLanguageID={lang1ID} on:change={runFetchAllLanguageInfo} />
-	syntax with <LangDropDown bind:chosenLanguageID={lang2ID} on:change={runFetchAllLanguageInfo} /> syntax
-</div>
+<span class="mx-auto">
+	<div class="mt-20 flex text-5xl font-bold justify-center">
+		Compare <LangDropDown on:message={handleMessage1}/> and <LangDropDown on:message={handleMessage2}/> Syntax
+	</div>
+</span>
