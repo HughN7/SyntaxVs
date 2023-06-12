@@ -3,12 +3,14 @@
 	import { ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import { supabase } from '$lib/supaBaseClient';
 	import { onMount } from 'svelte';
+	import {Language_Choice} from "$lib/ChooseLanguage/Choice"
 
 	let lang1ID: number = 1; 
 	let lang2ID: number = 2;
 
 	let fetchedChosenLangInfo: boolean = false;
 
+	/*
 	function handleMessage1(event: { detail: { message: number; }; }) {
 		lang1ID = event.detail.message;
 		lang1ID = lang1ID
@@ -80,10 +82,14 @@
 	}
 
 	onMount(runFetchChosenLanguageInfo)
+	*/
 </script>
 
 <span class="mx-auto">
-	<div class="mt-20 flex text-5xl font-bold justify-center">
+	<!--div class="mt-20 flex text-5xl font-bold justify-center">
 		Compare <LangDropDown on:message={handleMessage1}/> and <LangDropDown on:message={handleMessage2}/> Syntax
+	</div-->
+	<div class="mt-20 flex text-5xl font-bold justify-center">
+		Compare <LangDropDown Language={Language_Choice.Language1}/> and <LangDropDown Language={Language_Choice.Language2}/> Syntax
 	</div>
 </span>
