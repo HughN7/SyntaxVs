@@ -21,8 +21,8 @@
 		<!-- head -->
 		<thead>
 			<tr>
-				<th>0</th>
-				<th>Type</th>
+				<th><div class="w-2 justify-center">0</div></th>
+				<td><div class="w-14 justify-center mr-2">Type</div></td>
 				<th>{$ChosenLanguage1.Language}</th>
 				<th>{$ChosenLanguage2.Language}</th>
 			</tr>
