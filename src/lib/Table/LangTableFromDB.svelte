@@ -16,13 +16,13 @@
 	{@html $codeTheme}
 </svelte:head>
 
-<div class="overflow-x-auto rounded-lg shadow-2xl pt-5">
+<div class="rounded-lg shadow-2xl pt-5 mb-24">
 	<table class="table table-zebra w-full">
 		<!-- head -->
 		<thead>
 			<tr>
-				<th>0</th>
-				<th>Type</th>
+				<th><div class="w-2 justify-center">0</div></th>
+				<td><div class="w-14 justify-center mr-2">Type</div></td>
 				<th>{$ChosenLanguage1.Language}</th>
 				<th>{$ChosenLanguage2.Language}</th>
 			</tr>
@@ -111,10 +111,10 @@
 			<TableRow
 				row_number={11}
 				row_name="Class"
-				lang1_property={$ChosenLanguage1.Map}
-				lang1_property_info={$ChosenLanguage1.Map_Info}
-				lang2_property={$ChosenLanguage2.Map}
-				lang2_property_info={$ChosenLanguage2.Map_Info}
+				lang1_property={$ChosenLanguage1.Class}
+				lang1_property_info={$ChosenLanguage1.Class_Info}
+				lang2_property={$ChosenLanguage2.Class}
+				lang2_property_info={$ChosenLanguage2.Class_Info}
 			/>
 		</tbody>
 	</table>
