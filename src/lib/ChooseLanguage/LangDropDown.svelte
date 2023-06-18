@@ -17,7 +17,7 @@
 		});
 	}
 
-	async function getLanguageData() {
+	export async function getLanguageData() {
 		let fetched_language = true;
 		try {
 			const { data, error } = await supabase.from('Languages').select('*').eq('id', justValue);
