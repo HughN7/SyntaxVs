@@ -5,7 +5,7 @@
 </script>
 
 <div class="hero min-h-screen bg-base-200">
-    <div class="">
+    <div class="flex-auto">
         <div class="text-center py-4">
             <h1><LangVsDisplay/></h1>
         </div>

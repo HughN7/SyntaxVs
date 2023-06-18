@@ -3,9 +3,12 @@
 	import ThemeChange from './ThemeChange.svelte';
 </script>
 
-<div class="navbar bg-neutral-100 shadow-2xl">
-	<div class="navbar-start flex-1">
+<div class="navbar bg-neutral-100 shadow-2xl flex-1 flex-grow min-w-fit">
+	<div class="navbar-start w-96">
 		<a class="btn btn-ghost normal-case text-3xl" href="/">Syntax Vs.</a>
+	</div>
+	<div class="w-96">
+		
 	</div>
 	<div class="navbar-end">
 		<ul class="menu menu-horizontal p-0">

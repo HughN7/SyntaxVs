@@ -2,21 +2,13 @@
 	import { codeTheme, ChosenLanguage1, ChosenLanguage2 } from '../../stores';
 	import TableRow from '$lib/Table/TableRow.svelte';
 
-	/*
-    Conditional Statements (combine, and, or, not)
-    Loops
-    Array
-    ListLike
-    Map
-    Classes
-    */
 </script>
 
 <svelte:head>
 	{@html $codeTheme}
 </svelte:head>
 
-<div class="rounded-lg shadow-2xl pt-5 mb-24">
+<div class="rounded-lg shadow-2xl pt-5 mb-24 overflow-auto flex-1 flex-grow">
 	<table class="table table-zebra w-full">
 		<!-- head -->
 		<thead>
